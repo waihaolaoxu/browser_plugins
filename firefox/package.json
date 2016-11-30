@@ -1,0 +1,16 @@
+{
+  "title": "家居在线",
+  "name": "jia-ju-zai-xian",
+  "version": "0.0.1",
+  "description": "缓存刷新",
+  "main": "index.js",
+  "author": "前端老徐",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ]
+}
