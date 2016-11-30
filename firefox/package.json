@@ -1,10 +1,11 @@
 {
   "title": "家居在线",
-  "name": "jia-ju-zai-xian",
-  "version": "0.0.1",
+  "name": "jiajuol_clear_cache",
+  "version": "0.0.2",
   "description": "缓存刷新",
   "main": "index.js",
   "author": "前端老徐",
+  "updateURL":"https://github.loveqiao.cn/browser_plugins/firefox/jiajuol_clear_cache.xpi",
   "engines": {
     "firefox": ">=38.0a1",
     "fennec": ">=38.0a1"

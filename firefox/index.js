@@ -1,11 +1,13 @@
 /*
  * @ anthor:前端老徐
  * @ date:2016-11-30
-*/
+ */
 
 var buttons = require('sdk/ui/button/action');
 var tabs = require("sdk/tabs");
 var Request = require("sdk/request").Request;
+var notifications = require("sdk/notifications");
+var self = require("sdk/self");
 
 var button = buttons.ActionButton({
 	id: "mozilla-link",
@@ -20,26 +22,31 @@ var button = buttons.ActionButton({
 
 //刷新
 function handleClick(state) {
-	if(tabs.activeTab.url.indexOf('jiajuol')<0){
+	if (tabs.activeTab.url.indexOf('jiajuol') < 0) {
 		console.log('错误：非家居网站！');
 		return;
 	}
 	Request({
 		url: "http://admin.jiajuol.com/admin/website/ajax_flush.php",
-		content:{
-			url:tabs.activeTab.url,
-			flash:"yes"
+		content: {
+			url: tabs.activeTab.url,
+			flash: "yes"
 		},
 		onComplete: function(response) {
-			var data=JSON.parse(response.text);
-			if(data.code==200){
+			var data = JSON.parse(response.text);
+			if (data.code == 200) {
 				console.log('刷新成功！');
 				console.log(response.text);
 				tabs.activeTab.reload();
-			}else{
+			} else {
 				console.log('刷新失败！');
 				console.log(response.text);
 			}
+			notifications.notify({
+				title:"家居在线",
+				text: data.des,
+				iconURL: "./icon-64.png"
+			});
 		}
 	}).post();
 }
