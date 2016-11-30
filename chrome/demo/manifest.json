@@ -1,0 +1,20 @@
+{
+	"name": "缓存刷新",
+	"description": "网家科技web项目缓存刷新插件",
+	"author":"前端老徐",
+	"version": "0.0.0.1",
+	"manifest_version": 2,
+	"homepage_url":"https://www.github.com/waihaolaoxu/chrome_plugins.git",
+	"browser_action": {
+		"default_icon": "icon16.png",
+		"default_popup": "index.html"
+	},
+	"icons": {
+		"16": "icon16.png",
+		"48": "icon48.png",
+		"128": "icon128.png"
+	},
+	"permissions": [
+		"tabs", "history","http://*/*","notifications"
+	]
+}
